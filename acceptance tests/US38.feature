@@ -7,7 +7,7 @@ Scenario: El usuario se encuentra en la página de inicio
 
 Dado que el <usuario> ha ingresado a la pagina web
 Cuando el sistema muestre la pantalla de <inicio>
-Entonces el usuario visualizará la <pagina de inicio> con una <introduccion> breve y clara con textos e imágenes que muestran de qué trata la app
+Entonces el <usuario> visualizará la <pagina de inicio> con una <introduccion> breve y clara con textos e imágenes que muestran de qué trata la app
 
 Examples: INPUT
     | usuario |
