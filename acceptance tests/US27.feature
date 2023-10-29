@@ -27,27 +27,27 @@ Feature: Unirse a un grupo
  Y el sistema enviará al grupo la solicitud del <usuario>
 
  Examples: INPUT
-    | usuario | boton solicitar unirse| boton para aceptar| 
-    | Samara Diaz  | "Revisar solicitudes de union"|"Acepto la solicitud de Alessia Romero " | 
+    | usuario | boton solicitar unirse| 
+    | Samara Diaz  | "Enviar una solicitud de union al grupo "Lirios del metal"|
  Examples: OUTPUT
-    | lista de todas las invitaciones de grupo|la solicitud fue enviada correctamente|
-    | Lira Hidalgo, Natalia Ramirez, Alessia Romero, etc | "La solicitud de Alessia Romero fue aceptada correctamente"|
+    |la solicitud fue enviada correctamente|
+    | "Samara Díaz, tu solicitud de  fue enviada correctamente"|
 
 
 
  Scenario: Solicitud de ingreso aceptada a un grupo privado
 
  Dado que el <usuario> envió una solicitud para unirse a un grupo
- Cuando el administrador del <grupo acepte la solicitud>
+ Cuando el administrador del grupo acepte la solicitud
  Entonces el sistema notificará al <usuario> que su <solicitud fue aceptada>
  Y el <usuario> podrá tener acceso al contenido del grupo
 
  Examples: INPUT
-    | usuario | boton Solicitudes de union| boton para aceptar| 
-    | Samara Diaz  | "Revisar solicitudes de union"|"Acepto la solicitud de Alessia Romero " | 
+    | usuario | 
+    | Samara Diaz  | 
  Examples: OUTPUT
-    | lista de todas las invitaciones de grupo|la solicitud fue aceptada correctamente|
-    | Lira Hidalgo, Natalia Ramirez, Alessia Romero, etc | "La solicitud de Alessia Romero fue aceptada correctamente"|
+    |la solicitud fue aceptada |
+    |"Samara Díaz, tu solicitud fue aceptada"|
 
 
  Scenario: Solicitud de ingreso rechazada a un grupo privado
@@ -56,13 +56,12 @@ Feature: Unirse a un grupo
  Cuando el administrador del grupo <rechace la solicitud>
  Entonces el sistema notificará al <usuario> que <su solicitud fue rechazada>
 
- Examples: INPUT
-    | usuario | boton Solicitudes de union| boton para aceptar| 
-    | Samara Diaz  | "Revisar solicitudes de union"|"Acepto la solicitud de Alessia Romero " | 
+Examples: INPUT
+    | usuario | 
+    | Samara Diaz  | 
  Examples: OUTPUT
-    | lista de todas las invitaciones de grupo|la solicitud fue aceptada correctamente|
-    | Lira Hidalgo, Natalia Ramirez, Alessia Romero, etc | "La solicitud de Alessia Romero fue aceptada correctamente"|
-
+    |la solicitud fue rechazada |
+    |"Samara Díaz, tu solicitud fue rechazada"|
 
 
 
